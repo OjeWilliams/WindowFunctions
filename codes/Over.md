@@ -8,8 +8,7 @@ Order by: name
 
 ```
 SELECT name,  SUM(weight) OVER (ORDER BY name) AS running_total_weight
-FROM cats
-;
+FROM cats ;
 ```
 
 <br>
@@ -35,7 +34,7 @@ Order by: weight
 
 ```
 SELECT name, weight, AVG(weight) OVER (ORDER BY weight ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS average_weight
-FROM cats;
+FROM cats ;
 ```
 
 <br>
