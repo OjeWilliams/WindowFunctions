@@ -33,10 +33,8 @@ The first and last cats are content to have an average weight of consisting of 2
 Return: name, weight, average_weight \
 Order by: weight
 
-`SELECT name, weight, AVG(weight) OVER ( ORDER BY weight ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS average_weight
-FROM cats
-gheih
-\knep\kne
-kne
-;`
+```
+SELECT name, weight, AVG(weight) OVER ( ORDER BY weight ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS average_weight
+FROM cats;
+```
 
