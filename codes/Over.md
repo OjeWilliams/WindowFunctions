@@ -23,3 +23,11 @@ Order by: breed, name
 SELECT name, breed, SUM(weight) OVER ( PARTITION BY breed ORDER BY name) AS running_total_weight
 FROM cats ;
 ```
+
+<br>
+
+[Question3](https://www.windowfunctions.com/questions/over/2): \
+The cats would like to see the average of the weight of them, the cat just after them and the cat just before them.
+The first and last cats are content to have an average weight of consisting of 2 cats not 3. \
+Return: name, weight, average_weight /
+Order by: weight
