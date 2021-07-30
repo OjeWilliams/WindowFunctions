@@ -21,7 +21,7 @@ Return: name, breed, running total weight \
 Order by: breed, name
 
 ```
-SELECT name, breed, SUM(weight) OVER ( PARTITION BY breed ORDER BY name) AS running_total_weight
+SELECT name, breed, SUM(weight) OVER (PARTITION BY breed ORDER BY name) AS running_total_weight
 FROM cats ;
 ```
 
@@ -34,7 +34,7 @@ Return: name, weight, average_weight \
 Order by: weight
 
 ```
-SELECT name, weight, AVG(weight) OVER ( ORDER BY weight ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS average_weight
+SELECT name, weight, AVG(weight) OVER (ORDER BY weight ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS average_weight
 FROM cats;
 ```
 
