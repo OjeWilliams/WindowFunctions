@@ -38,3 +38,15 @@ SELECT name, weight, AVG(weight) OVER (ORDER BY weight ROWS BETWEEN 1 PRECEDING 
 FROM cats;
 ```
 
+<br>
+
+[Question4](https://www.windowfunctions.com/questions/over/3): \
+The cats must be ordered by weight descending and will enter an elevator one by one. We would like to know what the running total weight is. \
+If two cats have the same weight they must enter separately\
+Return: name, running total weight \
+Order by: weight desc
+
+```
+
+```
+
