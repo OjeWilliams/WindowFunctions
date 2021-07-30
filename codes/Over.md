@@ -47,6 +47,7 @@ Return: name, running total weight \
 Order by: weight desc
 
 ```
-
+SELECT name, SUM(weight) OVER (ORDER BY weight DESC ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS runnning_total_weight
+FROM cats ;
 ```
 
