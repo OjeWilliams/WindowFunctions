@@ -35,4 +35,5 @@ Order by: weight
 ```
 
 ```
-`hello`
+`SELECT name, breed, SUM(weight) OVER ( PARTITION BY breed ORDER BY name) AS running_total_weight
+FROM cats ;`
