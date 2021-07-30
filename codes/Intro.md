@@ -5,5 +5,7 @@ We would like to find the total weight of cats grouped by age. But only return t
 Return: age, sum(weight) Order by: age
 
 ```
-
+SELECT age, SUM(weight) AS total_weight FROM cats
+GROUP BY age HAVING SUM(weight) > 12
+ORDER BY age ;
 ```
