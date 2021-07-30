@@ -1,4 +1,5 @@
 [Questions](https://www.windowfunctions.com/questions/over/) based on [over](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-over-clause-transact-sql?view=sql-server-ver15).
+### `Note This was done with a single line code block. Use ctrl + e`
 
 [Question1](https://www.windowfunctions.com/questions/over/0): \
 The cats must be ordered by name and will enter an elevator one by one. We would like to know what the running total weight is.\
@@ -35,5 +36,4 @@ Order by: weight
 ```
 
 ```
-`SELECT name, breed, SUM(weight) OVER ( PARTITION BY breed ORDER BY name) AS running_total_weight
-FROM cats ;`
+
