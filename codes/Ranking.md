@@ -28,3 +28,17 @@ SELECT RANK() OVER (ORDER BY weight DESC) AS ranking, weight, name
 FROM cats
 ORDER BY ranking, name ; 
 ```
+
+<br>
+
+[Question3](https://www.windowfunctions.com/questions/ranking/2): \
+For cats age means seniority, we would like to rank the cats by age (oldest first).
+However we would like their ranking to be sequentially increasing. \
+Return: ranking, name, age \
+Order by: ranking, name
+
+```
+SELECT DENSE_RANK() OVER (ORDER BY age DESC) AS r, name, age
+FROM cats
+ORDER BY r ,name ;
+```
