@@ -53,7 +53,7 @@ Order by: weight
 ```
 --- Remember to multiply the percent by 100
 SELECT name, weight, PERCENT_RANK() OVER (ORDER BY weight)*100 AS percent
-FROM cats
+FROM cats :
 ```
 
 <br>
@@ -64,7 +64,6 @@ Return: name, weight, percent \
 Order by: weight
 
 ```
---- Remember to multiply the percent by 100
-SELECT name, weight, PERCENT_RANK() OVER (ORDER BY weight)*100 AS percent
-FROM cats
+SELECT name, weight, CAST(CUME_DIST() OVER (ORDER BY weight)*100 as integer) AS percent
+FROM cats ; 
 ```
