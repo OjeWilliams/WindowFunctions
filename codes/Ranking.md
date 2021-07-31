@@ -24,7 +24,7 @@ Return: ranking, weight, name \
 Order by: ranking, name
 
 ```
-SELECT ROW_NUMBER() OVER ( ORDER BY color, name ) AS unique_number, name, color
-FROM cats 
-;
+SELECT RANK() OVER (ORDER BY weight DESC) AS ranking, weight, name
+FROM cats
+ORDER BY ranking, name ; 
 ```
