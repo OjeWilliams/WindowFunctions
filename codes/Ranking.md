@@ -55,3 +55,16 @@ Order by: weight
 SELECT name, weight, PERCENT_RANK() OVER (ORDER BY weight)*100 AS percent
 FROM cats
 ```
+
+<br>
+
+[Question5](https://www.windowfunctions.com/questions/ranking/4): \
+Each cat would like to know what weight percentile it is in. This requires casting to an integer \
+Return: name, weight, percent \
+Order by: weight
+
+```
+--- Remember to multiply the percent by 100
+SELECT name, weight, PERCENT_RANK() OVER (ORDER BY weight)*100 AS percent
+FROM cats
+```
