@@ -6,3 +6,6 @@
 [percent rank](https://docs.microsoft.com/en-us/sql/t-sql/functions/percent-rank-transact-sql?view=sql-server-ver15).
 
 [Question1](https://www.windowfunctions.com/questions/ranking/0): \
+The cats form a line grouped by color. Inside each color group the cats order themselves by name. Every cat must have a unique number for its place in the line.
+We must assign each cat a unique number while maintaining their color & name ordering. \
+Return: unique_number, name, color
