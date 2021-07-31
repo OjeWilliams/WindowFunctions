@@ -51,7 +51,7 @@ Return: name, weight, percent \
 Order by: weight
 
 ```
-SELECT DENSE_RANK() OVER (ORDER BY age DESC) AS r, name, age
+--- Remember to multiply the percent by 100
+SELECT name, weight, PERCENT_RANK() OVER (ORDER BY weight)*100 AS percent
 FROM cats
-ORDER BY r ,name ;
 ```
