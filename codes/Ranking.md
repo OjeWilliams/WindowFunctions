@@ -42,3 +42,16 @@ SELECT DENSE_RANK() OVER (ORDER BY age DESC) AS r, name, age
 FROM cats
 ORDER BY r ,name ;
 ```
+
+<br>
+
+[Question4](https://www.windowfunctions.com/questions/ranking/3): \
+Each cat would like to know what percentage of other cats weigh less than it \
+Return: name, weight, percent \
+Order by: weight
+
+```
+SELECT DENSE_RANK() OVER (ORDER BY age DESC) AS r, name, age
+FROM cats
+ORDER BY r ,name ;
+```
