@@ -15,3 +15,16 @@ SELECT ROW_NUMBER() OVER ( ORDER BY color, name ) AS unique_number, name, color
 FROM cats 
 ;
 ```
+<br>
+
+[Question2](https://www.windowfunctions.com/questions/ranking/1): \
+We would like to find the fattest cat. Order all our cats by weight.
+The two heaviest cats should both be 1st. The next heaviest should be 3rd. \
+Return: ranking, weight, name \
+Order by: ranking, name
+
+```
+SELECT ROW_NUMBER() OVER ( ORDER BY color, name ) AS unique_number, name, color
+FROM cats 
+;
+```
