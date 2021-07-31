@@ -9,3 +9,9 @@
 The cats form a line grouped by color. Inside each color group the cats order themselves by name. Every cat must have a unique number for its place in the line.
 We must assign each cat a unique number while maintaining their color & name ordering. \
 Return: unique_number, name, color
+
+```
+SELECT ROW_NUMBER() OVER ( ORDER BY color, name ) AS unique_number, name, color
+FROM cats 
+;
+```
