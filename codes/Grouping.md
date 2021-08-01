@@ -10,7 +10,9 @@ We are worried our cats are too fat and need to diet.
 We would like to group the cats into quartiles by their weight. \
 Return: name, weight, weight_quartile \
 Order by: weight
+<br>
 
 ```
-
+SELECT name, weight, NTILE(4) OVER (order by weight) AS weight_quartile
+FROM cats ;
 ```
