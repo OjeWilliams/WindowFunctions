@@ -4,7 +4,7 @@
 [lag](https://docs.microsoft.com/en-us/sql/t-sql/functions/lag-transact-sql?view=sql-server-ver15),
 [lead](https://docs.microsoft.com/en-us/sql/t-sql/functions/lead-transact-sql?view=sql-server-ver15).
 
-<br>
+
 [Question1](https://www.windowfunctions.com/questions/grouping/0): \
 We are worried our cats are too fat and need to diet.
 We would like to group the cats into quartiles by their weight. \
