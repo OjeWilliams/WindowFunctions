@@ -44,5 +44,7 @@ Return: name, color, lowest_weight_by_color\
 Order by: color, name 
 
 ```
-SELECT name, weight, COALESCE(weight - LAG(weight,1) OVER (ORDER BY weight),0) AS weight_to_lose
-FROM cats ;
+SELECT name, color, MIN(weight) OVER (PARTITION BY COLOR ORDER BY weight) AS lowest_weight_by_color
+FROM cats
+ORDER BY color, name ;
+```
