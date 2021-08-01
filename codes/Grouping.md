@@ -22,6 +22,16 @@ Print a list of cats, their weights and the weight difference between them and t
 Return: name, weight, weight_to_lose \
 Order by: weight 
 
+```
+SELECT name, weight, COALESCE(weight - LAG(weight,1) OVER (ORDER BY weight),0) AS weight_to_lose
+FROM cats ;
+```
+
+[Question2](https://www.windowfunctions.com/questions/grouping/1): \
+Cats are fickle. Each cat would like to lose weight to be the equivalent weight of the cat weighing just less than it.
+Print a list of cats, their weights and the weight difference between them and the nearest lighter cat ordered by weight. \
+Return: name, weight, weight_to_lose \
+Order by: weight 
 
 ```
 SELECT name, weight, COALESCE(weight - LAG(weight,1) OVER (ORDER BY weight),0) AS weight_to_lose
