@@ -56,7 +56,7 @@ Print a list of cats, their weights and either the next heaviest cat's weight or
 Return: name, weight, breed, next_heaviest \
 Order by: weight 
 ```
-SELECT name, color, MIN(weight) OVER (PARTITION BY COLOR ORDER BY weight) AS lowest_weight_by_color
+SELECT name, weight, breed, COALESCE( CAST(LEAD(weight,1) OVER (PARTITION BY breed ORDER BY weight) AS varchar), 'fattest cat') AS next_heaviest
 FROM cats
-ORDER BY color, name ;
+ORDER BY weight ;
 ```
