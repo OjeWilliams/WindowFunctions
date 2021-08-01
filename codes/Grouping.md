@@ -32,7 +32,8 @@ The cats now want to lose weight according to their breed. Each cat would like t
 Return: name, breed, weight, weight_to_lose \
 Order by: weight 
 ```
-SELECT name, weight, COALESCE(weight - LAG(weight,1) OVER (ORDER BY weight),0) AS weight_to_lose
-FROM cats ;
+SELECT name, breed, weight, COALESCE( weight - lag(weight,1) OVER (PARTITION BY breed ORDER BY weight),0) AS weight_to_lose
+FROM cats
+ORDER BY weight ;
 ```
 \
