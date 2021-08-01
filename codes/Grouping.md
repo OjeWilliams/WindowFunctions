@@ -37,8 +37,7 @@ FROM cats
 ORDER BY weight ;
 ```
 \
-
-[Question3](https://www.windowfunctions.com/questions/grouping/3): \
+[Question4](https://www.windowfunctions.com/questions/grouping/3): \
 Cats are vain. Each cat would like to pretend it has the lowest weight for its color.
 Print cat name, color and the minimum weight of cats with that color. \
 Return: name, color, lowest_weight_by_color\
