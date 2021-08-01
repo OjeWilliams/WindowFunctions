@@ -60,3 +60,13 @@ SELECT name, weight, breed, COALESCE( CAST(LEAD(weight,1) OVER (PARTITION BY bre
 FROM cats
 ORDER BY weight ;
 ```
+
+\
+[Question6](https://www.windowfunctions.com/questions/grouping/5): \
+The cats have decided the correct weight is the same as the 4th lightest cat. All cats shall have this weight. Except in a fit of jealous rage they decide to set the weight of the lightest three to 99.9
+Print a list of cats, their weights and their imagined weight\
+
+```
+SELECT name, weight, COALESCE( NTH_VALUE(weight,4) OVER (ORDER BY weight),99.9) AS imagined_weight
+FROM cats ;
+```
