@@ -11,8 +11,6 @@ We would like to group the cats into quartiles by their weight. \
 Return: name, weight, weight_quartile \
 Order by: weight
 
-<br>
-
 ```
 SELECT name, weight, NTILE(4) OVER (order by weight) AS weight_quartile
 FROM cats ;
@@ -21,9 +19,9 @@ FROM cats ;
 [Question1](https://www.windowfunctions.com/questions/grouping/1): \
 Cats are fickle. Each cat would like to lose weight to be the equivalent weight of the cat weighing just less than it.
 Print a list of cats, their weights and the weight difference between them and the nearest lighter cat ordered by weight. \
-Return: name, weight, weight_to_lose
-Order by: weight \
-<br>
+Return: name, weight, weight_to_lose \
+Order by: weight 
+
 
 ```
 SELECT name, weight, NTILE(4) OVER (order by weight) AS weight_quartile
