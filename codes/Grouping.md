@@ -42,7 +42,7 @@ Cats are vain. Each cat would like to pretend it has the lowest weight for its c
 Print cat name, color and the minimum weight of cats with that color. \
 Return: name, color, lowest_weight_by_color\
 Order by: color, name 
--- we could have used first_value() and nth_value() to achieve this query as well
+--- we could have used first_value() and nth_value() to achieve this query as well
 ```
 SELECT name, color, MIN(weight) OVER (PARTITION BY COLOR ORDER BY weight) AS lowest_weight_by_color
 FROM cats
