@@ -28,13 +28,11 @@ FROM cats ;
 ```
 \
 [Question3](https://www.windowfunctions.com/questions/grouping/2): \
-Cats are fickle. Each cat would like to lose weight to be the equivalent weight of the cat weighing just less than it.
-Print a list of cats, their weights and the weight difference between them and the nearest lighter cat ordered by weight. \
-Return: name, weight, weight_to_lose \
+The cats now want to lose weight according to their breed. Each cat would like to lose weight to be the equivalent weight of the cat in the same breed weighing just less than it.Print a list of cats, their breeds, weights and the weight difference between them and the nearest lighter cat of the same breed. \
+Return: name, breed, weight, weight_to_lose \
 Order by: weight 
-
 ```
 SELECT name, weight, COALESCE(weight - LAG(weight,1) OVER (ORDER BY weight),0) AS weight_to_lose
 FROM cats ;
 ```
-
+\
