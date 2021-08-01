@@ -48,3 +48,15 @@ SELECT name, color, MIN(weight) OVER (PARTITION BY COLOR ORDER BY weight) AS low
 FROM cats
 ORDER BY color, name ;
 ```
+
+\
+[Question5](https://www.windowfunctions.com/questions/grouping/4): \
+Each cat would like to see the next heaviest cat's weight when grouped by breed. If there is no heavier cat print 'fattest cat'
+Print a list of cats, their weights and either the next heaviest cat's weight or 'fattest cat'.\
+Return: name, weight, breed, next_heaviest \
+Order by: weight 
+```
+SELECT name, color, MIN(weight) OVER (PARTITION BY COLOR ORDER BY weight) AS lowest_weight_by_color
+FROM cats
+ORDER BY color, name ;
+```
