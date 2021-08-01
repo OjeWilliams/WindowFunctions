@@ -70,3 +70,16 @@ Print a list of cats, their weights and their imagined weight\
 SELECT name, weight, COALESCE( NTH_VALUE(weight,4) OVER (ORDER BY weight),99.9) AS imagined_weight
 FROM cats ;
 ```
+
+\
+[Question7](https://www.windowfunctions.com/questions/grouping/6): \
+The cats want to show their weight by breed. The cats agree that they should show the second lightest cat's weight (so as not to make other cats feel bad)
+Print a list of breeds, and the second lightest weight of that breed \
+Return: breed, imagined_weight \
+Order by: breed
+
+```
+SELECT DISTINCT breed, NTH_VALUE(weight,2) OVER (PARTITION BY breed ORDER BY weight RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS imagined_weight
+FROM cats 
+ORDER BY breed;
+```
