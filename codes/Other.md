@@ -22,7 +22,7 @@ WINDOW NTILE_WIN AS (ORDER BY weight) ;
 ```
 
 \
-[Question1](https://www.windowfunctions.com/questions/other/0): \
+[Question2](https://www.windowfunctions.com/questions/other/1): \
 We would like to group our cats by color
 Return 3 rows, each row containing a color and a list of cat names\
 Return: color, names Order by: color DESC \
@@ -34,5 +34,17 @@ GROUP BY color
 ORDER BY color DESC ;
 ```
 
+\
+[Question3](https://www.windowfunctions.com/questions/other/2): \
+We would like to group our cats by color
+Return 3 rows, each row containing a color and a list of cat names\
+Return: color, names Order by: color DESC \
+
+```
+SELECT color, ARRAY_AGG(name)  AS names
+FROM cats 
+GROUP BY color
+ORDER BY color DESC ;
+```
 
 
