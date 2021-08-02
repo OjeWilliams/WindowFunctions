@@ -36,9 +36,8 @@ ORDER BY color DESC ;
 
 \
 [Question3](https://www.windowfunctions.com/questions/other/2): \
-We would like to group our cats by color
-Return 3 rows, each row containing a color and a list of cat names\
-Return: color, names Order by: color DESC \
+We would like to find the average weight of cats grouped by breed. Also, in the same query find the average weight of cats grouped by breed whose age is over 1\
+Return: breed, average_weight, average_old_weight Order by: breed\
 
 ```
 SELECT color, ARRAY_AGG(name)  AS names
