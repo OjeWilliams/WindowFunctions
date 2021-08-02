@@ -40,10 +40,10 @@ We would like to find the average weight of cats grouped by breed. Also, in the 
 Return: breed, average_weight, average_old_weight Order by: breed
 
 ```
-SELECT color, ARRAY_AGG(name)  AS names
-FROM cats 
-GROUP BY color
-ORDER BY color DESC ;
+SELECT breed, AVG(weight) AS average_weight, AVG(weight) FILTER(WHERE age >1) AS average_old_weight
+FROM cats
+GROUP BY breed
+ORDER BY breed ;
 ```
 
 
