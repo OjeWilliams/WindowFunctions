@@ -35,6 +35,7 @@ FROM cats ;
 
 OR
 --Using Window Clause
+
 SELECT name, breed, SUM(weight) OVER cappy AS running_total_weight
 FROM cats
 WINDOW cappy AS (PARTITION BY breed ORDER BY name)
@@ -51,6 +52,13 @@ Order by: weight
 ```
 SELECT name, weight, AVG(weight) OVER (ORDER BY weight ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS average_weight
 FROM cats ;
+
+OR
+--Using Window Clause
+
+SELECT name, weight, AVG(weight) OVER goat AS average_weight
+FROM cats
+WINDOW goat AS ( ORDER BY weight ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) ;
 ```
 
 <br>
