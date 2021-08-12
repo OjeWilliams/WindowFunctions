@@ -6,9 +6,19 @@ The cats must be ordered by name and will enter an elevator one by one. We would
 Return: name, running total weight\
 Order by: name
 
+Using Window Clause
+
 ```
 SELECT name,  SUM(weight) OVER (ORDER BY name) AS running_total_weight
 FROM cats ;
+
+OR
+--Using Window Clause
+
+SELECT
+name, SUM(weight) OVER bat AS running_total_weight
+FROM cats 
+WINDOW bat AS (ORDER BY name) ;
 ```
 
 <br>
