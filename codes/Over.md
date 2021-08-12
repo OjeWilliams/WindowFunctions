@@ -32,6 +32,12 @@ Order by: breed, name
 ```
 SELECT name, breed, SUM(weight) OVER (PARTITION BY breed ORDER BY name) AS running_total_weight
 FROM cats ;
+
+OR
+--Using Window Clause
+SELECT name, breed, SUM(weight) OVER cappy AS running_total_weight
+FROM cats
+WINDOW cappy AS (PARTITION BY breed ORDER BY name)
 ```
 
 <br>
