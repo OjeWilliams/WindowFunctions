@@ -72,5 +72,12 @@ Order by: weight desc
 ```
 SELECT name, SUM(weight) OVER (ORDER BY weight DESC ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS runnning_total_weight
 FROM cats ;
+
+OR
+--Using Window Clause
+
+SELECT name, SUM(weight) OVER horsey AS running_total_weight
+FROM cats
+WINDOW horsey AS ( ORDER BY weight DESC ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) ;
 ```
 
