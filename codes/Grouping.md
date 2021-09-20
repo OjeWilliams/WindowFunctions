@@ -35,6 +35,14 @@ Order by: weight
 SELECT name, breed, weight, COALESCE( weight - lag(weight,1) OVER (PARTITION BY breed ORDER BY weight),0) AS weight_to_lose
 FROM cats
 ORDER BY weight ;
+
+OR
+
+SELECT
+name, breed, weight, coalesce(weight - lag(weight,1) over mywindow,0) as gotta_lose 
+from cats 
+WINDOW mywindow as ( partition by breed order by weight)
+order by weight, name
 ```
 \
 [Question4](https://www.windowfunctions.com/questions/grouping/3): \
