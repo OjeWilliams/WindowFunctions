@@ -39,10 +39,10 @@ ORDER BY weight ;
 OR
 
 SELECT
-name, breed, weight, coalesce(weight - lag(weight,1) over mywindow,0) as gotta_lose 
-from cats 
-WINDOW mywindow as ( partition by breed order by weight)
-order by weight, name
+name, breed, weight, COALESCE(weight - LAG(weight,1) OVER mywindow,0) as gotta_lose 
+FROM cats 
+WINDOW mywindow AS ( PARTITION BY breed ORDER BY weight)
+ORDER BY weight, name;
 ```
 \
 [Question4](https://www.windowfunctions.com/questions/grouping/3): \
