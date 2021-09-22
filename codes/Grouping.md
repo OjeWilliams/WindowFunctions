@@ -62,6 +62,11 @@ SELECT name, color, FIRST_VALUE(weight) OVER (PARTITION BY COLOR ORDER BY weight
 FROM cats
 ORDER BY color, name ;
 
+--OR
+SELECT name, color, NTH_VALUE(weight,1) OVER (PARTITION BY COLOR ORDER BY weight) AS lowest_weight_by_color
+FROM cats
+ORDER BY color, name ;
+
 ```
 
 \
