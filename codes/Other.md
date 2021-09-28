@@ -5,7 +5,7 @@
 
 \
 [Question1](https://www.windowfunctions.com/questions/other/0): \
-This SQL function can be made simpler by using the WINDOW statement. Please try and use the WINDOW clause .
+This SQL function can be made simpler by using the WINDOW statement. Please try and use the WINDOW clause.
 Each cat would like to see what half, third and quartile they are in for their weight.\
 Return: name, weight, by_half, thirds, quartile \
 Order by: weight
